@@ -1,0 +1,80 @@
+
+
+.metersWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 14px;
+
+
+  .meter {
+    position: relative;
+
+    .insideWrapper {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      &__number {
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 22px;
+      }
+
+      &__desc {
+        font-size: 14px;
+        color: #648192;
+      }
+    }
+
+    svg {
+      fill: none;
+
+      .loader {
+        fill: none;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+      }
+
+      .first {
+        stroke-width: 11px;
+        stroke: #27e1ae;
+        stroke-dashoffset: 0;
+        animation: firstLine 1.5s ease-out;
+      }
+
+      .circle {
+        fill: none;
+        stroke: #1b2a33;
+        stroke-width: 10;
+      }
+
+      .arc {
+        fill: none;
+        stroke: red;
+        stroke-width: 10;
+      }
+    }
+  }
+
+}
+
+@keyframes firstLine {
+  from {
+    stroke-dashoffset: var(--dashOffset);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
