@@ -13,10 +13,6 @@ export class GaugeCircle {
   @Prop() max: number = 100;
 
 
-  computeStyle () {
-    return {"--dashOffset":""+this.computeLength()}
-  }
-
 
   render() {
     return (
@@ -29,7 +25,7 @@ export class GaugeCircle {
           </div>
           <svg width={this.size+"px"} height={this.size+"px"} >
             <circle class="circle" cx={this.size/2} cy={this.size/2} r={this.computeR()}/>
-            <path class="arc first" style={this.computeStyle()} stroke-dasharray={this.computeLength()} d={this.computeD()}  ></path>
+            <path class="arc first" style={{"--dashOffset":""+this.computeLength()}} stroke-dasharray={this.computeLength()} d={this.computeD()}  ></path>
           </svg>
         </div>
       </div>
